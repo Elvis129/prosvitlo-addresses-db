@@ -1,7 +1,11 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2025-12-02T14:46:00Z",
-  "total_addresses": 343863,
-  "total_cities": 1243,
-  "description": "Initial release from Excel files dated 17.11.2025"
+  "version": "2.0.0",
+  "last_updated": "2026-01-30T00:00:00Z",
+  "total_addresses": 357796,
+  "total_cities": 1249,
+  "description": "V2: Fixed house numbers with letters (18А, 18Б, 18В, 18Г), added addresses_v2.json",
+  "files": {
+    "addresses.json": "v1 - original (343863 addresses)",
+    "addresses_v2.json": "v2 - fixed letters, 357796 addresses"
+  }
 }
