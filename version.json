@@ -1,13 +1,13 @@
 {
-  "version": "3.2.0",
-  "last_updated": "2026-09-15T00:00:00Z",
+  "version": "3.3.0",
+  "last_updated": "2026-10-08T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.2: added Zhytomyr region (addresses_zt_v1.json)",
+  "description": "V3.3: Khmelnytskyi queues refreshed from hoe files dated 01.10.2026 (season 2026-2027). settlement_id deliberately unchanged.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
-    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (359733 addresses)",
+    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)"
   },
@@ -15,10 +15,11 @@
     "khmelnytska": {
       "file": "addresses_v3.json",
       "operator": "АТ «Хмельницькобленерго»",
-      "settlements": 1380,
-      "streets": 17507,
-      "addresses": 359733,
-      "katottg": true
+      "settlements": 1381,
+      "streets": 18104,
+      "addresses": 372308,
+      "katottg": true,
+      "queues_updated": "2026-10-01"
     },
     "ternopilska": {
       "file": "addresses_te_v1.json",
