@@ -1,16 +1,16 @@
 {
-  "version": "3.4.0",
+  "version": "3.4.1",
   "last_updated": "2026-10-09T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.4: added Zakarpattia region (addresses_zk_v1.json)",
+  "description": "V3.4.1: Zakarpattia rebuilt from operator API (hromadas included)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)",
-    "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{settlement}, no katottg/hromada (267709 addresses)"
+    "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)"
   },
   "regions": {
     "khmelnytska": {
@@ -41,11 +41,11 @@
     "zakarpatska": {
       "file": "addresses_zk_v1.json",
       "operator": "ПрАТ «Закарпаттяобленерго»",
-      "settlements": 490,
-      "streets": 7966,
-      "addresses": 267709,
+      "settlements": 567,
+      "streets": 8128,
+      "addresses": 272616,
       "katottg": false,
-      "note": "черга з назви PDF-файлу (12 файлів, по одному на підчергу); сітки ГПВ оператор не публікує"
+      "note": "PowerOn API оператора; громада є, settlement_id/КАТОТТГ — ні"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
