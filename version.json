@@ -1,9 +1,9 @@
 {
-  "version": "3.6.0",
+  "version": "3.6.1",
   "last_updated": "2026-10-09T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.6: added Lviv region (addresses_lv_v1.json)",
+  "description": "V3.6.1: Lviv base WITHDRAWN — it was built from the operator's 2024 PDF, whose 6-subqueue taxonomy no longer matches their live 12-subqueue system",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -11,8 +11,7 @@
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)",
-    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)",
-    "addresses_lv_v1.json": "Lviv - keyed by lv::{hromada}::{settlement} (461760 addresses, PDF ГПВ + pw_cities/pw_streets)"
+    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)"
   },
   "regions": {
     "khmelnytska": {
@@ -57,15 +56,6 @@
       "addresses": 334435,
       "katottg": false,
       "note": "12 PDF ГПВ, шість колонок; район розрізняє однойменні НП; звірено з живим API 13/15"
-    },
-    "lvivska": {
-      "file": "addresses_lv_v1.json",
-      "operator": "ПрАТ «Львівобленерго»",
-      "settlements": 1908,
-      "streets": 20039,
-      "addresses": 461760,
-      "katottg": true,
-      "note": "черги з PDF ГПВ на 2024-2025; таксономія 3×2, не 6×2; черга взята з геометрії обʼєднаних клітинок і звірена з ручним обходом документа (всі 10 меж черг); однойменні села розчеплені за вулицею через pw_streets — 1770 з 1908 НП мають громаду й КАТОТТГ, решта позначена «громаду не визначено»"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
