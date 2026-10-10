@@ -1,9 +1,9 @@
 {
-  "version": "3.6.1",
-  "last_updated": "2026-10-09T00:00:00Z",
+  "version": "3.7.0",
+  "last_updated": "2026-10-10T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.6.1: Lviv base WITHDRAWN — it was built from the operator's 2024 PDF, whose 6-subqueue taxonomy no longer matches their live 12-subqueue system",
+  "description": "V3.7: added Chernivtsi region (addresses_cv_v1.json)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -11,7 +11,8 @@
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)",
-    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)"
+    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)",
+    "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12)"
   },
   "regions": {
     "khmelnytska": {
@@ -56,6 +57,15 @@
       "addresses": 334435,
       "katottg": false,
       "note": "12 PDF ГПВ, шість колонок; район розрізняє однойменні НП; звірено з живим API 13/15"
+    },
+    "chernivetska": {
+      "file": "addresses_cv_v1.json",
+      "operator": "АТ «Чернівціобленерго»",
+      "settlements": 461,
+      "streets": 14013,
+      "addresses": 240544,
+      "katottg": false,
+      "note": "таксономія ПЛОСКА: Група1…Група12, без підчерг і крапкової нотації; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems, не hromada); зібрано 12 запитами з shutdowns-search/{1..12}/, де таблиця лежить прямо в HTML"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
