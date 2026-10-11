@@ -1,9 +1,9 @@
 {
-  "version": "3.7.0",
-  "last_updated": "2026-10-10T00:00:00Z",
+  "version": "3.8.0",
+  "last_updated": "2026-10-11T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.7: added Chernivtsi region (addresses_cv_v1.json)",
+  "description": "V3.8: added Mykolaiv region (addresses_mk_v1.json)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -12,7 +12,8 @@
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)",
-    "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12)"
+    "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12)",
+    "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (241675 addresses, REST API)"
   },
   "regions": {
     "khmelnytska": {
@@ -66,6 +67,15 @@
       "addresses": 240544,
       "katottg": false,
       "note": "таксономія ПЛОСКА: Група1…Група12, без підчерг і крапкової нотації; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems, не hromada); зібрано 12 запитами з shutdowns-search/{1..12}/, де таблиця лежить прямо в HTML"
+    },
+    "mykolaivska": {
+      "file": "addresses_mk_v1.json",
+      "operator": "АТ «Миколаївобленерго»",
+      "settlements": 881,
+      "streets": 9105,
+      "addresses": 241675,
+      "katottg": false,
+      "note": "зібрано з off.energy.mk.ua/api (addr/filii→ns→street→dom→outage-queue); ГПВ = type_id 3 (12 підчерг), 1 = ГАВ, 2 = СГАВ; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems); звірено з PDF оператора: 322 збіги з 323, 1 розбіжність"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
