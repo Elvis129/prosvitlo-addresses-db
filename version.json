@@ -1,19 +1,19 @@
 {
-  "version": "3.9.0",
+  "version": "3.10.0",
   "last_updated": "2026-10-15T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.9.0: Zhytomyr — hromada + KATOTTG code (codifier 2026-07-07) for 1603 of 1647 settlements",
+  "description": "V3.10.0: hromada + KATOTTG code (codifier 07.07.2026) for every region — Mykolaiv, Ivano-Frankivsk, Chernivtsi; Ternopil and Zakarpattia get the code",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
-    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
+    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (261796 addresses); katottg for 1043 of 1049 settlements (codifier 2026-07-07)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1603 of 1647 settlements (codifier 2026-07-07), the rest keep the REM label (362910 addresses)",
-    "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)",
-    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)",
-    "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12)",
-    "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV)"
+    "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
+    "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses); hromada + katottg for 789 of 798 settlements (codifier 2026-07-07)",
+    "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
+    "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -31,7 +31,8 @@
       "settlements": 1049,
       "streets": 10911,
       "addresses": 261796,
-      "katottg": false
+      "katottg": true,
+      "katottg_coverage": "1043/1049"
     },
     "zhytomyrska": {
       "file": "addresses_zt_v1.json",
@@ -48,8 +49,9 @@
       "settlements": 567,
       "streets": 8128,
       "addresses": 272616,
-      "katottg": false,
-      "note": "PowerOn API оператора; громада є, settlement_id/КАТОТТГ — ні"
+      "katottg": true,
+      "note": "PowerOn API оператора; громада є від оператора, settlement_id — ні; код КАТОТТГ — з кодифікатора (3.10.0)",
+      "katottg_coverage": "565/567"
     },
     "ivano-frankivska": {
       "file": "addresses_if_v1.json",
@@ -57,8 +59,9 @@
       "settlements": 798,
       "streets": 14158,
       "addresses": 334435,
-      "katottg": false,
-      "note": "12 PDF ГПВ, шість колонок; район розрізняє однойменні НП; звірено з живим API 13/15"
+      "katottg": true,
+      "note": "12 PDF ГПВ, шість колонок; район розрізняє однойменні НП; звірено з живим API 13/15",
+      "katottg_coverage": "789/798"
     },
     "chernivetska": {
       "file": "addresses_cv_v1.json",
@@ -66,8 +69,9 @@
       "settlements": 461,
       "streets": 14013,
       "addresses": 240544,
-      "katottg": false,
-      "note": "таксономія ПЛОСКА: Група1…Група12, без підчерг і крапкової нотації; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems, не hromada); зібрано 12 запитами з shutdowns-search/{1..12}/, де таблиця лежить прямо в HTML"
+      "katottg": true,
+      "note": "таксономія ПЛОСКА: Група1…Група12, без підчерг і крапкової нотації; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems, не hromada); зібрано 12 запитами з shutdowns-search/{1..12}/, де таблиця лежить прямо в HTML; з 3.10.0 громада з кодифікатора — там, де дільниця однозначно її вказала",
+      "katottg_coverage": "418/461"
     },
     "mykolaivska": {
       "file": "addresses_mk_v1.json",
@@ -75,8 +79,9 @@
       "settlements": 881,
       "streets": 9105,
       "addresses": 282718,
-      "katottg": false,
-      "note": "зібрано з off.energy.mk.ua/api (addr/filii→ns→street→dom→outage-queue); ГПВ = type_id 3 (12 підчерг), 1 = ГАВ, 2 = СГАВ; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems); 36587 адрес ЗВІЛЬНЕНІ від ГПВ і лишаються з порожньою чергою (як у Житомирі) — щоб людина могла додати адресу й отримувати планові та аварійні; звірено з PDF оператора: 322 збіги з 323"
+      "katottg": true,
+      "note": "зібрано з off.energy.mk.ua/api (addr/filii→ns→street→dom→outage-queue); ГПВ = type_id 3 (12 підчерг), 1 = ГАВ, 2 = СГАВ; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems); 36587 адрес ЗВІЛЬНЕНІ від ГПВ і лишаються з порожньою чергою (як у Житомирі) — щоб людина могла додати адресу й отримувати планові та аварійні; звірено з PDF оператора: 322 збіги з 323; з 3.10.0 громада з кодифікатора — там, де дільниця однозначно її вказала",
+      "katottg_coverage": "811/881"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
