@@ -1,9 +1,9 @@
 {
-  "version": "3.10.0",
+  "version": "3.11.0",
   "last_updated": "2026-10-15T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.10.0: hromada + KATOTTG code (codifier 07.07.2026) for every region — Mykolaiv, Ivano-Frankivsk, Chernivtsi; Ternopil and Zakarpattia get the code",
+  "description": "V3.11.0: Zaporizhzhia — city + Запорізький район from the operator's 23 Google Sheets (region disabled in the app: the operator's site drops foreign IPs)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -13,7 +13,8 @@
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses); hromada + katottg for 789 of 798 settlements (codifier 2026-07-07)",
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
-    "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)"
+    "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
+    "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -82,6 +83,16 @@
       "katottg": true,
       "note": "зібрано з off.energy.mk.ua/api (addr/filii→ns→street→dom→outage-queue); ГПВ = type_id 3 (12 підчерг), 1 = ГАВ, 2 = СГАВ; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems); 36587 адрес ЗВІЛЬНЕНІ від ГПВ і лишаються з порожньою чергою (як у Житомирі) — щоб людина могла додати адресу й отримувати планові та аварійні; звірено з PDF оператора: 322 збіги з 323; з 3.10.0 громада з кодифікатора — там, де дільниця однозначно її вказала",
       "katottg_coverage": "811/881"
+    },
+    "zaporizka": {
+      "file": "addresses_zp_v1.json",
+      "operator": "АТ «Запоріжжяобленерго»",
+      "settlements": 140,
+      "streets": 1870,
+      "addresses": 56834,
+      "katottg": true,
+      "katottg_coverage": "134/140",
+      "note": "23 публічні Google-таблиці, на які посилається www.zoe.com.ua (по одній на підчергу; місто й Запорізький район — лише підконтрольна частина); діапазони будинків — одна сторона вулиці; стара назва вулиці в дужках збережена; громада від оператора, код КАТОТТГ — з кодифікатора; будинки поза ГПВ у джерелі не перелічені"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
