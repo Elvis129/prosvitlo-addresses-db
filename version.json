@@ -1,15 +1,15 @@
 {
-  "version": "3.8.1",
-  "last_updated": "2026-10-11T00:00:00Z",
+  "version": "3.9.0",
+  "last_updated": "2026-10-15T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.8.1: Mykolaiv — exempt addresses kept in the base (was wrongly dropped)",
+  "description": "V3.9.0: Zhytomyr — hromada + KATOTTG code (codifier 2026-07-07) for 1603 of 1647 settlements",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id}, no katottg (261796 addresses)",
-    "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}, no katottg/hromada (362910 addresses)",
+    "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1603 of 1647 settlements (codifier 2026-07-07), the rest keep the REM label (362910 addresses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses)",
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12)",
@@ -39,7 +39,8 @@
       "settlements": 1647,
       "streets": 19287,
       "addresses": 362910,
-      "katottg": false
+      "katottg": true,
+      "katottg_coverage": "1603/1647"
     },
     "zakarpatska": {
       "file": "addresses_zk_v1.json",
