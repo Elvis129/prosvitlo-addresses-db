@@ -1,9 +1,9 @@
 {
-  "version": "3.11.0",
-  "last_updated": "2026-10-15T00:00:00Z",
+  "version": "3.12.0",
+  "last_updated": "2026-10-16T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.11.0: Zaporizhzhia — city + Запорізький район from the operator's 23 Google Sheets (region disabled in the app: the operator's site drops foreign IPs)",
+  "description": "V3.12.0: Dnipropetrovsk — ЦЕК point network (region disabled in the app until the DTEK part is decided)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -14,7 +14,8 @@
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334435 addresses); hromada + katottg for 789 of 798 settlements (codifier 2026-07-07)",
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
-    "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)"
+    "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
+    "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14"
   },
   "regions": {
     "khmelnytska": {
@@ -93,6 +94,16 @@
       "katottg": true,
       "katottg_coverage": "134/140",
       "note": "23 публічні Google-таблиці, на які посилається www.zoe.com.ua (по одній на підчергу; місто й Запорізький район — лише підконтрольна частина); діапазони будинків — одна сторона вулиці; стара назва вулиці в дужках збережена; громада від оператора, код КАТОТТГ — з кодифікатора; будинки поза ГПВ у джерелі не перелічені"
+    },
+    "dnipropetrovska-cek": {
+      "file": "addresses_cek_v1.json",
+      "operator": "ТОВ «Центральна енергетична компанія»",
+      "settlements": 14,
+      "streets": 439,
+      "addresses": 9009,
+      "katottg": true,
+      "katottg_coverage": "11/14",
+      "note": "лише мережа ЦЕК (решта області — ДТЕК ДнЕМ); база — const locations зі сторінки «визначення черги» (1 запит); «Черга N» без підчерги → обидві підчерги; будинки на сітці ДТЕК не включено"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
