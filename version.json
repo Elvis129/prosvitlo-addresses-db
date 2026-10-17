@@ -1,9 +1,9 @@
 {
-  "version": "3.12.0",
-  "last_updated": "2026-10-16T00:00:00Z",
+  "version": "3.13.0",
+  "last_updated": "2026-10-17T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.12.0: Dnipropetrovsk — ЦЕК point network (region disabled in the app until the DTEK part is decided)",
+  "description": "V3.13.0: Poltava — full base from the operator's API (region disabled in the app until a Ukrainian IP is available)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -15,7 +15,8 @@
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
     "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
-    "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14"
+    "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
+    "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages); katottg for 1682 of 1718 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -104,6 +105,16 @@
       "katottg": true,
       "katottg_coverage": "11/14",
       "note": "лише мережа ЦЕК (решта області — ДТЕК ДнЕМ); база — const locations зі сторінки «визначення черги» (1 запит); «Черга N» без підчерги → обидві підчерги; будинки на сітці ДТЕК не включено"
+    },
+    "poltavska": {
+      "file": "addresses_pl_v1.json",
+      "operator": "АТ «Полтаваобленерго»",
+      "settlements": 1718,
+      "streets": 19265,
+      "addresses": 406100,
+      "katottg": true,
+      "katottg_coverage": "1682/1718",
+      "note": "API пошуку на poe.pl.ua: дерево НП→вулиці→будинки, черга — запитом по будинку; міста опитано повністю, у селах — пробами (однакова черга на вулиці → решта будинків її успадковує, різна → поштучно); «декілька підключень» і будинки поза ГПВ — порожня черга; settlement_id і street_ids — id оператора (ними бек питає відключення); розрізнювач однойменних НП — дільниця"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
