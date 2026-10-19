@@ -1,9 +1,9 @@
 {
-  "version": "3.14.0",
+  "version": "3.15.0",
   "last_updated": "2026-10-19T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.14.0: Volyn — full base from the operator's «queue by address» lookup (region not yet enabled in the app)",
+  "description": "V3.15.0: Volyn — ГАВ queues added (separate `gav` map per settlement, shaped like `streets`)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -17,7 +17,7 @@
     "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
-    "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV); katottg for 1021 of 1045 settlements (codifier 2026-07-07)"
+    "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -125,7 +125,9 @@
       "addresses": 255785,
       "katottg": true,
       "katottg_coverage": "1021/1045",
-      "note": "energy.volyn.ua «Визначити чергу за адресою»: POST formCity/formStreet, обидва — частковий збіг, formStreet=% віддає всі вулиці НП одним запитом (1002 запити на всю область); ГПВ 1.1…6.2; «Не залучено» — 13668 адрес у базі з порожньою чергою; джерело вказує лише РАЙОН, тож громада й КАТОТТГ — з кодифікатора, де пара (район, назва) однозначна; 24 пари однойменних сіл в одному районі лишаються одним записом «Назва (Район район)»; будинки «<>» і техоб'єкти (КТП, опори) не включено"
+      "note": "energy.volyn.ua «Визначити чергу за адресою»: POST formCity/formStreet, обидва — частковий збіг, formStreet=% віддає всі вулиці НП одним запитом (1002 запити на всю область); ГПВ 1.1…6.2; «Не залучено» — 13668 адрес у базі з порожньою чергою; джерело вказує лише РАЙОН, тож громада й КАТОТТГ — з кодифікатора, де пара (район, назва) однозначна; 24 пари однойменних сіл в одному районі лишаються одним записом «Назва (Район район)»; будинки «<>» і техоб'єкти (КТП, опори) не включено; з 3.15.0 ГАВ (черги 1-10) — окремою мапою `gav` кожного НП (вулиця → будинок → черги), лише будинки, залучені до ГАВ (113 791)",
+      "gav": true,
+      "gav_addresses": 113791
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
