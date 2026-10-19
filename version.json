@@ -1,9 +1,9 @@
 {
-  "version": "3.13.0",
-  "last_updated": "2026-10-17T00:00:00Z",
+  "version": "3.14.0",
+  "last_updated": "2026-10-19T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.13.0: Poltava — full base from the operator's API (region disabled in the app until a Ukrainian IP is available)",
+  "description": "V3.14.0: Volyn — full base from the operator's «queue by address» lookup (region not yet enabled in the app)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -16,7 +16,8 @@
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
     "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
-    "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages); katottg for 1682 of 1718 settlements (codifier 2026-07-07)"
+    "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
+    "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV); katottg for 1021 of 1045 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -115,6 +116,16 @@
       "katottg": true,
       "katottg_coverage": "1682/1718",
       "note": "API пошуку на poe.pl.ua: дерево НП→вулиці→будинки, черга — запитом по будинку; міста опитано повністю, у селах — пробами (однакова черга на вулиці → решта будинків її успадковує, різна → поштучно); «декілька підключень» і будинки поза ГПВ — порожня черга; settlement_id і street_ids — id оператора (ними бек питає відключення); розрізнювач однойменних НП — дільниця"
+    },
+    "volynska": {
+      "file": "addresses_vl_v1.json",
+      "operator": "ПрАТ «Волиньобленерго»",
+      "settlements": 1045,
+      "streets": 10620,
+      "addresses": 255785,
+      "katottg": true,
+      "katottg_coverage": "1021/1045",
+      "note": "energy.volyn.ua «Визначити чергу за адресою»: POST formCity/formStreet, обидва — частковий збіг, formStreet=% віддає всі вулиці НП одним запитом (1002 запити на всю область); ГПВ 1.1…6.2; «Не залучено» — 13668 адрес у базі з порожньою чергою; джерело вказує лише РАЙОН, тож громада й КАТОТТГ — з кодифікатора, де пара (район, назва) однозначна; 24 пари однойменних сіл в одному районі лишаються одним записом «Назва (Район район)»; будинки «<>» і техоб'єкти (КТП, опори) не включено"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
