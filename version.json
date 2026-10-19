@@ -1,9 +1,9 @@
 {
-  "version": "3.15.0",
+  "version": "3.16.0",
   "last_updated": "2026-10-19T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.15.0: Volyn — ГАВ queues added (separate `gav` map per settlement, shaped like `streets`)",
+  "description": "V3.16.0: Poltava — ГАВ queues added (separate `gav` map, as in Volyn)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -16,7 +16,7 @@
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
     "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
-    "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
+    "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)"
   },
   "regions": {
@@ -115,7 +115,9 @@
       "addresses": 406100,
       "katottg": true,
       "katottg_coverage": "1682/1718",
-      "note": "API пошуку на poe.pl.ua: дерево НП→вулиці→будинки, черга — запитом по будинку; міста опитано повністю, у селах — пробами (однакова черга на вулиці → решта будинків її успадковує, різна → поштучно); «декілька підключень» і будинки поза ГПВ — порожня черга; settlement_id і street_ids — id оператора (ними бек питає відключення); розрізнювач однойменних НП — дільниця"
+      "note": "API пошуку на poe.pl.ua: дерево НП→вулиці→будинки, черга — запитом по будинку; міста опитано повністю, у селах — пробами (однакова черга на вулиці → решта будинків її успадковує, різна → поштучно); «декілька підключень» і будинки поза ГПВ — порожня черга; settlement_id і street_ids — id оператора (ними бек питає відключення); розрізнювач однойменних НП — дільниця; з 3.16.0 ГАВ — окремою мапою `gav` (вулиця → будинок → черги 1-10) з поля оператора «залучено до ГАВ (черга …)»: «0» = не залучено, «8 основна» = 8, токени виду «2-1» відкинуто; неопитані будинки — лише з вулиць, де всі проби дали однаковий ГАВ",
+      "gav": true,
+      "gav_addresses": 91851
     },
     "volynska": {
       "file": "addresses_vl_v1.json",
