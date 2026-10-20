@@ -1,9 +1,9 @@
 {
-  "version": "3.18.0",
+  "version": "3.19.0",
   "last_updated": "2026-10-20T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.18.0: Kyiv city — address base from the Yasno public API (60 groups)",
+  "description": "V3.19.0: Chernihiv — address base from the operator GPV register PDF («з 25.12.2025»)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -19,7 +19,8 @@
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1846 of 1868 settlements (codifier 2026-07-07)",
-    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317"
+    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
+    "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -151,6 +152,16 @@
       "addresses": 49550,
       "katottg": true,
       "note": "Yasno public API addresses/v2 (regionId=25, dsoId=902): вулиці → будинки → група, кожен будинок опитано (109 363 запити); 60 груп у вигляді «N.1»; 236 будинків у кількох групах; планових/аварійних ДТЕК не публікує відкрито — застосунок показує примітку «лише графік»"
+    },
+    "chernihivska": {
+      "file": "addresses_cn_v1.json",
+      "operator": "АТ «Чернігівобленерго»",
+      "settlements": 1239,
+      "streets": 12267,
+      "addresses": 298173,
+      "katottg": true,
+      "katottg_coverage": "1113/1239",
+      "note": "PDF-реєстр ГПВ «з 25.12.2025» (186 стор., Grafik_obmezhen.pdf), розібраний за координатами слів; черга «1/1» -> «1.1»; 599 будинків у кількох підчергах; звірено вибірку вул. Шевченка (Чернігів) з живим API list_acc t=6 і картинкою ГПВ на 20.10.2026 — черги 1.2 і 3.x збіглися"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
