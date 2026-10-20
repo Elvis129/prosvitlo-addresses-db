@@ -1,9 +1,9 @@
 {
-  "version": "3.17.0",
+  "version": "3.18.0",
   "last_updated": "2026-10-20T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.17.0: Lviv — address base from the operator API (PowerOn pw_accounts), replaces the PDF base withdrawn in 3.6.1",
+  "description": "V3.18.0: Kyiv city — address base from the Yasno public API (60 groups)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -18,7 +18,8 @@
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
-    "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1846 of 1868 settlements (codifier 2026-07-07)"
+    "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1846 of 1868 settlements (codifier 2026-07-07)",
+    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317"
   },
   "regions": {
     "khmelnytska": {
@@ -141,6 +142,15 @@
       "katottg": true,
       "katottg_coverage": "1846/1868",
       "note": "PowerOn pw_accounts по кожній вулиці (23 630 запитів, ліміт 429); ГПВ 1.1…6.2; «Не входить», «Інший ОСР», «Генерація» — 13792 адрес у базі з порожньою чергою; поле katottg у джерелі — код ГРОМАДИ, тож код НП узято з кодифікатора за назвою всередині громади; назви вулиць без типу («Городоцька»), як у оператора"
+    },
+    "kyiv": {
+      "file": "addresses_kv_v1.json",
+      "operator": "ПрАТ «ДТЕК Київські електромережі»",
+      "settlements": 1,
+      "streets": 2319,
+      "addresses": 49550,
+      "katottg": true,
+      "note": "Yasno public API addresses/v2 (regionId=25, dsoId=902): вулиці → будинки → група, кожен будинок опитано (109 363 запити); 60 груп у вигляді «N.1»; 236 будинків у кількох групах; планових/аварійних ДТЕК не публікує відкрито — застосунок показує примітку «лише графік»"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
