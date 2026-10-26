@@ -1,14 +1,14 @@
 {
-  "version": "3.19.1",
+  "version": "3.19.2",
   "last_updated": "2026-10-26T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.19.1: Ivano-Frankivsk — two stray rows of the operator PDF (Poltava, Khmelnytskyi) removed",
+  "description": "V3.19.2: Ternopil, Lviv — stray records outside the operators' networks removed (Київ, Волочиськ; Тернопіль, Рованці)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
-    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (261796 addresses); katottg for 1043 of 1049 settlements (codifier 2026-07-07)",
+    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (261795 addresses); katottg for 1043 of 1047 settlements (codifier 2026-07-07)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1603 of 1647 settlements (codifier 2026-07-07), the rest keep the REM label (362910 addresses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334433 addresses); hromada + katottg for 789 of 796 settlements (codifier 2026-07-07)",
@@ -18,7 +18,7 @@
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
-    "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1846 of 1868 settlements (codifier 2026-07-07)",
+    "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
     "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)"
   },
@@ -35,11 +35,11 @@
     "ternopilska": {
       "file": "addresses_te_v1.json",
       "operator": "АТ «Тернопільобленерго»",
-      "settlements": 1049,
-      "streets": 10911,
-      "addresses": 261796,
+      "settlements": 1047,
+      "streets": 10910,
+      "addresses": 261795,
       "katottg": true,
-      "katottg_coverage": "1043/1049"
+      "katottg_coverage": "1043/1047"
     },
     "zhytomyrska": {
       "file": "addresses_zt_v1.json",
@@ -137,11 +137,11 @@
     "lvivska": {
       "file": "addresses_lv_v1.json",
       "operator": "ПрАТ «Львівобленерго»",
-      "settlements": 1868,
-      "streets": 21933,
+      "settlements": 1866,
+      "streets": 21931,
       "addresses": 502816,
       "katottg": true,
-      "katottg_coverage": "1846/1868",
+      "katottg_coverage": "1844/1866",
       "note": "PowerOn pw_accounts по кожній вулиці (23 630 запитів, ліміт 429); ГПВ 1.1…6.2; «Не входить», «Інший ОСР», «Генерація» — 13792 адрес у базі з порожньою чергою; поле katottg у джерелі — код ГРОМАДИ, тож код НП узято з кодифікатора за назвою всередині громади; назви вулиць без типу («Городоцька»), як у оператора"
     },
     "kyiv": {
