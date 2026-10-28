@@ -1,9 +1,9 @@
 {
-  "version": "3.19.2",
-  "last_updated": "2026-10-26T00:00:00Z",
+  "version": "3.20.0",
+  "last_updated": "2026-10-28T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.19.2: Ternopil, Lviv — stray records outside the operators' networks removed (Київ, Волочиськ; Тернопіль, Рованці)",
+  "description": "V3.20.0: Dnipropetrovsk, ДТЕК Дніпровські електромережі — 963 settlements, 448856 addresses from the Yasno public API",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -20,7 +20,8 @@
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
     "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
-    "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)"
+    "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
+    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id} (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
@@ -162,6 +163,16 @@
       "katottg": true,
       "katottg_coverage": "1113/1239",
       "note": "PDF-реєстр ГПВ «з 25.12.2025» (186 стор., Grafik_obmezhen.pdf), розібраний за координатами слів; черга «1/1» -> «1.1»; 599 будинків у кількох підчергах; звірено вибірку вул. Шевченка (Чернігів) з живим API list_acc t=6 і картинкою ГПВ на 20.10.2026 — черги 1.2 і 3.x збіглися"
+    },
+    "dnipropetrovska-dnem": {
+      "file": "addresses_dp_v1.json",
+      "operator": "АТ «ДТЕК Дніпровські електромережі»",
+      "settlements": 963,
+      "streets": 16536,
+      "addresses": 448856,
+      "katottg": true,
+      "katottg_coverage": "739/963",
+      "note": "мережа ДТЕК ДнЕМ (решта області — ЦЕК, addresses_cek_v1.json; 13 із 14 НП ЦЕК є в обох базах, кожен будинок належить одному оператору); Yasno regionId=3, dsoId=301; міста — черга кожного будинку, села — 3 проби на вулицю, при розбіжності — кожен будинок; вводи «N ввод K» зведено в будинок N з чергами всіх вводів; записи одного НП під кількома id Yasno злито за КАТОТТГ (Новомосковськ → Самар)"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
