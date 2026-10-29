@@ -31,7 +31,7 @@
   },
   "settlements": {
     "dp::ЦЕК::дніпро": {
-      "settlement_id": null,
+      "settlement_id": 1203002,
       "name": "Дніпро",
       "type": "м.",
       "hromada": "Дніпровська громада",
@@ -14514,7 +14514,7 @@
       }
     },
     "dp::ЦЕК::жовті води": {
-      "settlement_id": null,
+      "settlement_id": 1203004,
       "name": "Жовті Води",
       "type": "м.",
       "hromada": "Жовтоводська громада",
@@ -25248,7 +25248,7 @@
       }
     },
     "dp::ЦЕК::кривий ріг": {
-      "settlement_id": null,
+      "settlement_id": 1203006,
       "name": "Кривий Ріг",
       "type": "м.",
       "hromada": "Криворізька громада",
@@ -25884,7 +25884,7 @@
       }
     },
     "dp::ЦЕК::мар'янівка": {
-      "settlement_id": null,
+      "settlement_id": 1203007,
       "name": "Мар'янівка",
       "type": "с.",
       "hromada": null,
@@ -26059,7 +26059,7 @@
       }
     },
     "dp::ЦЕК::вільногірськ": {
-      "settlement_id": null,
+      "settlement_id": 1203001,
       "name": "Вільногірськ",
       "type": "м.",
       "hromada": "Вільногірська громада",
@@ -26857,7 +26857,7 @@
       }
     },
     "dp::ЦЕК::радушне": {
-      "settlement_id": null,
+      "settlement_id": 1203013,
       "name": "Радушне",
       "type": "с.",
       "hromada": "Новопільська громада",
@@ -27232,7 +27232,7 @@
       }
     },
     "dp::ЦЕК::дніпровське": {
-      "settlement_id": null,
+      "settlement_id": 1203003,
       "name": "Дніпровське",
       "type": "с.",
       "hromada": "Солонянська громада",
@@ -27627,7 +27627,7 @@
       }
     },
     "dp::ЦЕК::павлоград": {
-      "settlement_id": null,
+      "settlement_id": 1203010,
       "name": "Павлоград",
       "type": "м.",
       "hromada": "Павлоградська громада",
@@ -28087,7 +28087,7 @@
       }
     },
     "dp::ЦЕК::миролюбівка": {
-      "settlement_id": null,
+      "settlement_id": 1203008,
       "name": "Миролюбівка",
       "type": "с.",
       "hromada": "П’ятихатська громада",
@@ -28171,7 +28171,7 @@
       }
     },
     "dp::ЦЕК::полтаво-боголюбівка": {
-      "settlement_id": null,
+      "settlement_id": 1203012,
       "name": "Полтаво-Боголюбівка",
       "type": "с.",
       "hromada": null,
@@ -28189,7 +28189,7 @@
       }
     },
     "dp::ЦЕК::орільське": {
-      "settlement_id": null,
+      "settlement_id": 1203009,
       "name": "Орільське",
       "type": "с.",
       "hromada": "Слобожанська громада",
@@ -28414,7 +28414,7 @@
       }
     },
     "dp::ЦЕК::петриківка": {
-      "settlement_id": null,
+      "settlement_id": 1203011,
       "name": "Петриківка",
       "type": "с.",
       "hromada": "Новопокровська громада",
@@ -28437,7 +28437,7 @@
       }
     },
     "dp::ЦЕК::зарічне": {
-      "settlement_id": null,
+      "settlement_id": 1203005,
       "name": "Зарічне",
       "type": "с.",
       "hromada": null,
@@ -28585,7 +28585,7 @@
       }
     },
     "dp::ЦЕК::черкаське": {
-      "settlement_id": null,
+      "settlement_id": 1203014,
       "name": "Черкаське",
       "type": "с.",
       "hromada": "Затишнянська громада",

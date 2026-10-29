@@ -1,9 +1,9 @@
 {
-  "version": "3.20.0",
-  "last_updated": "2026-10-28T00:00:00Z",
+  "version": "3.20.1",
+  "last_updated": "2026-10-29T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.20.0: Dnipropetrovsk, ДТЕК Дніпровські електромережі — 963 settlements, 448856 addresses from the Yasno public API",
+  "description": "V3.20.1: Dnipropetrovsk — settlement_id unique across bases: ДТЕК ДнЕМ 1200000 + Yasno id (Yasno ids clashed with Ternopil's), ЦЕК 1203001-1203014 (had none)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -15,13 +15,13 @@
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
     "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
-    "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement} (9009 addresses); katottg for 11 of 14",
+    "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement}, settlement_id 1203001-1203014 (ours, fixed in parse_cek.py) (9009 addresses); katottg for 11 of 14",
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
     "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
-    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id} (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)"
+    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)"
   },
   "regions": {
     "khmelnytska": {
