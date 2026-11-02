@@ -1,15 +1,15 @@
 {
-  "version": "3.20.1",
-  "last_updated": "2026-10-29T00:00:00Z",
+  "version": "3.21.0",
+  "last_updated": "2026-11-02T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.20.1: Dnipropetrovsk — settlement_id unique across bases: ДТЕК ДнЕМ 1200000 + Yasno id (Yasno ids clashed with Ternopil's), ЦЕК 1203001-1203014 (had none)",
+  "description": "V3.21.0: Zhytomyr — apostrophes no longer HTML entities (40 settlements, 108 streets were unsearchable: «Будо-Вороб&#039;ї»); 6 settlements the register gained since 15.09 (Тем’янець, Лідівка, Чехова, Кордонівка, Першотравневе, Білки) and the ’-spelled duplicates of 20 villages merged in (+54 streets, +1098 houses)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (261795 addresses); katottg for 1043 of 1047 settlements (codifier 2026-07-07)",
-    "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1603 of 1647 settlements (codifier 2026-07-07), the rest keep the REM label (362910 addresses)",
+    "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1600 of 1653 settlements (codifier 2026-07-07), the rest keep the REM label (364008 addresses); updated 2026-11-02 from the register",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334433 addresses); hromada + katottg for 789 of 796 settlements (codifier 2026-07-07)",
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
@@ -45,11 +45,11 @@
     "zhytomyrska": {
       "file": "addresses_zt_v1.json",
       "operator": "АТ «Житомиробленерго»",
-      "settlements": 1647,
-      "streets": 19287,
-      "addresses": 362910,
+      "settlements": 1653,
+      "streets": 19341,
+      "addresses": 364008,
       "katottg": true,
-      "katottg_coverage": "1603/1647"
+      "katottg_coverage": "1600/1653"
     },
     "zakarpatska": {
       "file": "addresses_zk_v1.json",
