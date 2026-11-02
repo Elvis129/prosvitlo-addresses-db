@@ -1,9 +1,9 @@
 {
-  "version": "3.21.0",
+  "version": "3.22.0",
   "last_updated": "2026-11-02T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.21.0: Zhytomyr — apostrophes no longer HTML entities (40 settlements, 108 streets were unsearchable: «Будо-Вороб&#039;ї»); 6 settlements the register gained since 15.09 (Тем’янець, Лідівка, Чехова, Кордонівка, Першотравневе, Білки) and the ’-spelled duplicates of 20 villages merged in (+54 streets, +1098 houses)",
+  "description": "V3.22.0: Rivne (Рівнеобленерго) — 200 settlements from the operator's GPV PDFs: 15801 numbered houses in 64 settlements and 3258 streets listed without numbers, wholly in one queue (`street_queues`: any house of such a street takes its queue)",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -21,7 +21,8 @@
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
     "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
-    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)"
+    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)",
+    "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (15801 numbered addresses + 3258 street-level queues); katottg for 199 of 200 settlements (codifier 2026-07-07); whole settlements «повністю» not included yet (need an app that saves an address without a house)"
   },
   "regions": {
     "khmelnytska": {
@@ -173,6 +174,16 @@
       "katottg": true,
       "katottg_coverage": "739/963",
       "note": "мережа ДТЕК ДнЕМ (решта області — ЦЕК, addresses_cek_v1.json; 13 із 14 НП ЦЕК є в обох базах, кожен будинок належить одному оператору); Yasno regionId=3, dsoId=301; міста — черга кожного будинку, села — 3 проби на вулицю, при розбіжності — кожен будинок; вводи «N ввод K» зведено в будинок N з чергами всіх вводів; записи одного НП під кількома id Yasno злито за КАТОТТГ (Новомосковськ → Самар)"
+    },
+    "rivnenska": {
+      "file": "addresses_rv_v1.json",
+      "operator": "ПрАТ «Рівнеобленерго»",
+      "settlements": 200,
+      "streets": 3871,
+      "addresses": 15801,
+      "street_queues": 3258,
+      "katottg": true,
+      "katottg_coverage": "199/200"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
