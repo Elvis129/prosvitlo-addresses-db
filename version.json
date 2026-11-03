@@ -1,9 +1,9 @@
 {
-  "version": "3.22.0",
-  "last_updated": "2026-11-02T00:00:00Z",
+  "version": "3.23.0",
+  "last_updated": "2026-11-03T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.22.0: Rivne (Рівнеобленерго) — 200 settlements from the operator's GPV PDFs: 15801 numbered houses in 64 settlements and 3258 streets listed without numbers, wholly in one queue (`street_queues`: any house of such a street takes its queue)",
+  "description": "V3.23.0: Rivne — 497 villages the operator lists whole («повністю»), one queue for the whole village (`settlement_queues`; 487 of them have no streets). The server shows street-less villages only to app builds that can save an address without a street (whole_village=true).",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -22,7 +22,7 @@
     "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
     "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)",
-    "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (15801 numbered addresses + 3258 street-level queues); katottg for 199 of 200 settlements (codifier 2026-07-07); whole settlements «повністю» not included yet (need an app that saves an address without a house)"
+    "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (687 settlements): numbered houses, streets listed without numbers (`street_queues`) and villages listed whole (`settlement_queues`, 497)"
   },
   "regions": {
     "khmelnytska": {
