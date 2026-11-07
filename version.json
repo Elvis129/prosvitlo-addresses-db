@@ -178,12 +178,14 @@
     "rivnenska": {
       "file": "addresses_rv_v1.json",
       "operator": "ПрАТ «Рівнеобленерго»",
-      "settlements": 200,
+      "settlements": 687,
       "streets": 3871,
       "addresses": 15801,
       "street_queues": 3258,
+      "settlement_queues": 497,
       "katottg": true,
-      "katottg_coverage": "199/200"
+      "katottg_coverage": "686/687",
+      "note": "PDF реєстру ГПВ (місто Рівне й область); номери будинків лише в 64 НП; street_queues — вулиця без номерів цілком в одній черзі; settlement_queues — село «повністю», одна черга на все село (487 із 497 без вулиць — сервер показує їх лише збіркам з whole_village=true); не взято 170 із 667 сіл «повністю»: НП не визначено в кодифікаторі (147), кілька черг (11), вулиці в іншій черзі (12)"
     }
   },
   "_note_legacy_counters": "total_addresses / total_cities describe addresses_v2.json only; use 'regions' for per-file truth"
