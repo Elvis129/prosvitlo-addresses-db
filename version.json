@@ -1,13 +1,13 @@
 {
-  "version": "3.27.0",
+  "version": "3.28.0",
   "last_updated": "2026-11-24T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.27.0: Khmelnytskyi - 144 houses (saved addresses checked one by one) got the queue hoe's own address search gives now (hoe changes queues there, the 09.10 xlsx are not updated; per-address events of 18-22.11 agree); Kyiv - partial refresh against Yasno: 176 streets checked, 96 moved (1051 houses changed group, 104 added), every street with a saved address included. Other regions untouched.",
+  "description": "V3.28.0: Khmelnytskyi - the 80 streets where 3.27.0 changed a saved address were re-asked whole through hoe's address search: 5193 of 5376 houses answered, 2161 got a new queue (Khmelnytskyi city 1168, Polonne 421, Iziaslav 113); unanswered houses kept. Kyiv - full refresh against Yasno: all 2319 streets checked, 1187 moved (9530 houses changed group since 3.27.0, 1318 added), 62 streets Yasno does not find kept as they were. No empty lists. Other regions untouched.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
-    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
+    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026; 5193 houses on 80 streets re-checked against hoe's address search 24.11.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (273728 addresses); queues as of 24.11.2026 (table + live grid); katottg for 1042 of 1046 settlements (codifier 2026-07-07)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1600 of 1653 settlements (codifier 2026-07-07), the rest keep the REM label (364008 addresses); updated 2026-11-02 from the register; 2026-11-15 Zhytomyr city queues confirmed by PowerOn (4420 houses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
@@ -19,7 +19,7 @@
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
-    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (49550 addresses, 60 groups N.1); katottg UA80000000000093317",
+    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (50972 addresses, 60 groups N.1; 41 houses Yasno puts in N.2); katottg UA80000000000093317; groups as of 24.11.2026 (Yasno)",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
     "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)",
     "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (687 settlements): numbered houses, streets listed without numbers (`street_queues`) and villages listed whole (`settlement_queues`, 497)"
