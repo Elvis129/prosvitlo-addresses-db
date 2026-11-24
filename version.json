@@ -1,9 +1,9 @@
 {
-  "version": "3.25.0",
+  "version": "3.26.0",
   "last_updated": "2026-11-24T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.25.0: Ternopil rebuilt from TOE's current pw_address_queues (24.11.2026) - the operator reassigned ГПВ queues after 17.10: 179636 of 261795 houses changed queue, 11933 new. 6525 houses the table no longer lists: 2763 got their queue from the live grid /a_gpv_g, 3762 keep the old one (no house left without a queue - an empty list means exempt). Other regions untouched.",
+  "description": "V3.26.0: Chernivtsi - 3976 houses got the queue of the operator's current shutdowns-search (Колінківці 5→11, Chernivtsi city 10→12/10→8/8→12); Zaporizhzhia - 1783 houses changed queue (two blocks of city streets 1.2→6.1, 6.1→2.2), 6513 houses added from the sheets. Houses the sources no longer list keep their queue. Other regions untouched.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -14,7 +14,7 @@
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334433 addresses); hromada + katottg for 789 of 796 settlements (codifier 2026-07-07)",
     "addresses_cv_v1.json": "Chernivtsi - keyed by cv::{district}::{settlement} (240544 addresses, flat groups 1-12); hromada + katottg for 418 of 461 settlements (codifier 2026-07-07)",
     "addresses_mk_v1.json": "Mykolaiv - keyed by mk::{district}::{settlement} (282718 addresses, 36587 exempt from GPV); hromada + katottg for 811 of 881 settlements (codifier 2026-07-07)",
-    "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (56834 addresses); katottg for 134 of 140 settlements (codifier 2026-07-07)",
+    "addresses_zp_v1.json": "Zaporizhzhia - keyed by zp::{hromada}::{settlement} (63347 addresses, queues as of 24.11.2026); katottg for 134 of 140 settlements (codifier 2026-07-07)",
     "addresses_cek_v1.json": "Dnipropetrovsk, ЦЕК only - keyed by dp::ЦЕК::{settlement}, settlement_id 1203001-1203014 (ours, fixed in parse_cek.py) (9009 addresses); katottg for 11 of 14",
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
@@ -82,7 +82,8 @@
       "addresses": 240544,
       "katottg": true,
       "note": "таксономія ПЛОСКА: Група1…Група12, без підчерг і крапкової нотації; розрізнювач однойменних НП — ДІЛЬНИЦЯ (у rems, не hromada); зібрано 12 запитами з shutdowns-search/{1..12}/, де таблиця лежить прямо в HTML; з 3.10.0 громада з кодифікатора — там, де дільниця однозначно її вказала",
-      "katottg_coverage": "418/461"
+      "katottg_coverage": "418/461",
+      "queues_updated": "2026-11-24"
     },
     "mykolaivska": {
       "file": "addresses_mk_v1.json",
@@ -99,10 +100,11 @@
       "operator": "АТ «Запоріжжяобленерго»",
       "settlements": 140,
       "streets": 1870,
-      "addresses": 56834,
+      "addresses": 63347,
       "katottg": true,
       "katottg_coverage": "134/140",
-      "note": "23 публічні Google-таблиці, на які посилається www.zoe.com.ua (по одній на підчергу; місто й Запорізький район — лише підконтрольна частина); діапазони будинків — одна сторона вулиці; стара назва вулиці в дужках збережена; громада від оператора, код КАТОТТГ — з кодифікатора; будинки поза ГПВ у джерелі не перелічені"
+      "note": "23 публічні Google-таблиці, на які посилається www.zoe.com.ua (по одній на підчергу; місто й Запорізький район — лише підконтрольна частина); діапазони будинків — одна сторона вулиці; стара назва вулиці в дужках збережена; громада від оператора, код КАТОТТГ — з кодифікатора; будинки поза ГПВ у джерелі не перелічені",
+      "queues_updated": "2026-11-24"
     },
     "dnipropetrovska-cek": {
       "file": "addresses_cek_v1.json",
