@@ -1,9 +1,9 @@
 {
-  "version": "3.26.0",
+  "version": "3.27.0",
   "last_updated": "2026-11-24T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.26.0: Chernivtsi - 3976 houses got the queue of the operator's current shutdowns-search (Колінківці 5→11, Chernivtsi city 10→12/10→8/8→12); Zaporizhzhia - 1783 houses changed queue (two blocks of city streets 1.2→6.1, 6.1→2.2), 6513 houses added from the sheets. Houses the sources no longer list keep their queue. Other regions untouched.",
+  "description": "V3.27.0: Khmelnytskyi - 144 houses (saved addresses checked one by one) got the queue hoe's own address search gives now (hoe changes queues there, the 09.10 xlsx are not updated; per-address events of 18-22.11 agree); Kyiv - partial refresh against Yasno: 176 streets checked, 96 moved (1051 houses changed group, 104 added), every street with a saved address included. Other regions untouched.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -32,7 +32,7 @@
       "streets": 18104,
       "addresses": 372308,
       "katottg": true,
-      "queues_updated": "2026-10-01"
+      "queues_updated": "2026-11-24 (partial)"
     },
     "ternopilska": {
       "file": "addresses_te_v1.json",
@@ -157,7 +157,8 @@
       "streets": 2319,
       "addresses": 49550,
       "katottg": true,
-      "note": "Yasno public API addresses/v2 (regionId=25, dsoId=902): вулиці → будинки → група, кожен будинок опитано (109 363 запити); 60 груп у вигляді «N.1»; 236 будинків у кількох групах; планових/аварійних ДТЕК не публікує відкрито — застосунок показує примітку «лише графік»"
+      "note": "Yasno public API addresses/v2 (regionId=25, dsoId=902): вулиці → будинки → група, кожен будинок опитано (109 363 запити); 60 груп у вигляді «N.1»; 236 будинків у кількох групах; планових/аварійних ДТЕК не публікує відкрито — застосунок показує примітку «лише графік»",
+      "queues_updated": "2026-11-24 (partial)"
     },
     "chernihivska": {
       "file": "addresses_cn_v1.json",
