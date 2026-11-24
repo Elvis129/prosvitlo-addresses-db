@@ -1,14 +1,14 @@
 {
-  "version": "3.24.0",
-  "last_updated": "2026-11-15T00:00:00Z",
+  "version": "3.25.0",
+  "last_updated": "2026-11-24T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.24.0: Zhytomyr city — queues from the fresh ztoe listing (14.11.2026) where PowerOn confirmed them on a ГПВ day: 4017 houses got a queue, 403 changed it. Houses the listing now marks exempt keep their queue; other settlements untouched.",
+  "description": "V3.25.0: Ternopil rebuilt from TOE's current pw_address_queues (24.11.2026) - the operator reassigned ГПВ queues after 17.10: 179636 of 261795 houses changed queue, 11933 new. 6525 houses the table no longer lists: 2763 got their queue from the live grid /a_gpv_g, 3762 keep the old one (no house left without a queue - an empty list means exempt). Other regions untouched.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
     "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026)",
-    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (261795 addresses); katottg for 1043 of 1047 settlements (codifier 2026-07-07)",
+    "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (273728 addresses); queues as of 24.11.2026 (table + live grid); katottg for 1042 of 1046 settlements (codifier 2026-07-07)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1600 of 1653 settlements (codifier 2026-07-07), the rest keep the REM label (364008 addresses); updated 2026-11-02 from the register; 2026-11-15 Zhytomyr city queues confirmed by PowerOn (4420 houses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
     "addresses_if_v1.json": "Ivano-Frankivsk - keyed by if::{district}::{settlement} (334433 addresses); hromada + katottg for 789 of 796 settlements (codifier 2026-07-07)",
@@ -37,11 +37,12 @@
     "ternopilska": {
       "file": "addresses_te_v1.json",
       "operator": "АТ «Тернопільобленерго»",
-      "settlements": 1047,
-      "streets": 10910,
-      "addresses": 261795,
+      "settlements": 1046,
+      "streets": 10995,
+      "addresses": 273728,
       "katottg": true,
-      "katottg_coverage": "1043/1047"
+      "katottg_coverage": "1042/1046",
+      "queues_updated": "2026-11-24"
     },
     "zhytomyrska": {
       "file": "addresses_zt_v1.json",
