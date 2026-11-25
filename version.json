@@ -1,9 +1,9 @@
 {
-  "version": "3.28.1",
+  "version": "3.28.2",
   "last_updated": "2026-11-25T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.28.1: Kyiv - 41 houses Yasno now answers as group 1-6 subgroup 2 (a label Yasno publishes no schedule for: planned-outages lists only 1.1-60.1) keep their last group with a schedule instead; 3.27.0/3.28.0 gave them the unschedulable label, and the backend showed «є світло» for it. Everything else as 3.28.0.",
+  "description": "V3.28.2: Khmelnytskyi - every house with a saved address asked hoe's address search again on 25.11 (1017 answered): 22 houses changed, mostly in Khmelnytskyi city, where hoe is re-assigning queues right now and its search gave other values on 24.11 (e.g. Gogolya 93: 3.2 -> 5.2 on 24.11, back to 3.2 on 25.11, as hoe's own outage event of 18.11 says). Unanswered houses kept. No empty lists. Other regions untouched.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
