@@ -1,9 +1,9 @@
 {
-  "version": "3.29.0",
-  "last_updated": "2026-11-25T00:00:00Z",
+  "version": "3.29.1",
+  "last_updated": "2026-11-26T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.29.0: re-check of 25.11 - operators keep moving queues. Khmelnytskyi: the 2161 houses changed on 24.11 asked hoe's address search again (2110 answered): 367 got another queue, all in Khmelnytskyi city (250 back to the old one, 117 a third). Ternopil: rebuilt again from the operator's table (12388 records) - 4313 houses moved since 24.11, 12162 added, 13 nameless settlements left out. Kyiv: 10 houses Yasno moved again. Zaporizhzhia: 16 houses added. Chernivtsi: the operator's table equals 24.11, nothing to change. No empty lists.",
+  "description": "V3.29.1: Kyiv re-check of 26.11 - Yasno keeps moving single houses between groups. The 76 saved Kyiv houses were asked of Yasno one by one: 13 got another group (Мудрака 37 12.1->5.1, Ірпінська 63/5 12.1->5.1, Гавела 18 -> 16.1...); 4 more houses on 5 of their 71 streets moved. Houses Yasno puts in N.2 (no schedule row) keep their group. No empty lists.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
@@ -19,7 +19,7 @@
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
-    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (50972 addresses, 60 groups N.1); katottg UA80000000000093317; groups as of 24.11.2026 (Yasno); 41 houses Yasno puts in N.2 keep their previous group",
+    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (50972 addresses, 60 groups N.1); katottg UA80000000000093317; groups as of 24.11.2026 (Yasno), saved houses re-asked 26.11.2026; houses Yasno puts in N.2 keep their previous group",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
     "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)",
     "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (687 settlements): numbered houses, streets listed without numbers (`street_queues`) and villages listed whole (`settlement_queues`, 497)"
