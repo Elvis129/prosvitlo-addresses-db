@@ -1,13 +1,13 @@
 {
-  "version": "3.29.1",
-  "last_updated": "2026-11-26T00:00:00Z",
+  "version": "3.30.0",
+  "last_updated": "2026-11-27T00:00:00Z",
   "total_addresses": 357796,
   "total_cities": 1249,
-  "description": "V3.29.1: Kyiv re-check of 26.11 - Yasno keeps moving single houses between groups. The 76 saved Kyiv houses were asked of Yasno one by one: 13 got another group (Мудрака 37 12.1->5.1, Ірпінська 63/5 12.1->5.1, Гавела 18 -> 16.1...); 4 more houses on 5 of their 71 streets moved. Houses Yasno puts in N.2 (no schedule row) keep their group. No empty lists.",
+  "description": "V3.30.0: ДТЕК ДнЕМ - 18 груп для збережених адрес; повторна звірка hoe/Київ 27.11. Dnipro (dnem): the saved users' houses were re-asked in Yasno 27.11 ~22:00 - 77 houses got a bare group 1-18; every other house keeps its old subqueue 1.1-6.2 (server shows 'no data'), because DTEK kept moving houses between groups during 27.11 (70% of a Dnipro-city sample changed within a day), so a crawl snapshot is not published. Khmelnytskyi: 10 houses of saved addresses where hoe answered the same queue on two reads (night and evening 27.11). Kyiv: 2 houses (Цегельна 7А 60.1->59.1, Каховська 62А 59.1->54.1), two consistent Yasno reads. No empty lists added.",
   "files": {
     "addresses.json": "v1 - original (343863 addresses)",
     "addresses_v2.json": "v2 - fixed letters, 357796 addresses",
-    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026; 5193 houses on 80 streets re-checked against hoe's address search 24.11.2026)",
+    "addresses_v3.json": "v3 - Khmelnytskyi, keyed by hoe settlement_id + katottg (372308 addresses, queues as of 01.10.2026; 5193 houses on 80 streets re-checked against hoe's address search 24.11.2026; 10 houses of saved addresses re-checked twice 27.11.2026)",
     "addresses_te_v1.json": "Ternopil - keyed by te::{toe city id} (285849 addresses); queues as of 25.11.2026 (operator table, 12388 records); katottg for 1042 of 1047 settlements (codifier 2026-07-07)",
     "addresses_zt_v1.json": "Zhytomyr - keyed by zt::{REM}::{settlement}; hromada + katottg for 1600 of 1653 settlements (codifier 2026-07-07), the rest keep the REM label (364008 addresses); updated 2026-11-02 from the register; 2026-11-15 Zhytomyr city queues confirmed by PowerOn (4420 houses)",
     "addresses_zk_v1.json": "Zakarpattia - keyed by zk::{hromada}::{settlement} (272616 addresses, PowerOn API); katottg for 565 of 567 settlements (codifier 2026-07-07)",
@@ -19,9 +19,9 @@
     "addresses_pl_v1.json": "Poltava - keyed by pl::{district}::{operator city id} (406100 addresses, operator API per house in cities, sampled in villages; ГАВ 1-10 for 91851 houses in a separate `gav` map); katottg for 1682 of 1718 settlements (codifier 2026-07-07)",
     "addresses_vl_v1.json": "Volyn - keyed by vl::{hromada}::{settlement} (255785 addresses, 13668 exempt from GPV; ГАВ 1-10 for 113791 houses in a separate `gav` map); katottg for 1021 of 1045 settlements (codifier 2026-07-07)",
     "addresses_lv_v1.json": "Lviv - keyed by lv::{settlement KATOTTG} (or lv::{hromada}::{settlement} without one) (502816 addresses, 13792 exempt from GPV); katottg for 1844 of 1866 settlements (codifier 2026-07-07)",
-    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (50972 addresses, 60 groups N.1); katottg UA80000000000093317; groups as of 24.11.2026 (Yasno), saved houses re-asked 26.11.2026; houses Yasno puts in N.2 keep their previous group",
+    "addresses_kv_v1.json": "Kyiv city - one settlement kv::Київ::київ (50972 addresses, 60 groups N.1); katottg UA80000000000093317; groups as of 24.11.2026 (Yasno), saved houses re-asked 26.11.2026; houses Yasno puts in N.2 keep their previous group; 2 saved houses re-asked twice 27.11.2026",
     "addresses_cn_v1.json": "Chernihiv - keyed by cn::{settlement KATOTTG} (or cn::{дільниця}::{name}) (298173 addresses); katottg for 1113 of 1239 settlements (codifier 2026-07-07)",
-    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07)",
+    "addresses_dp_v1.json": "Dnipropetrovsk, ДТЕК ДнЕМ only - keyed by dp::{Yasno city id}, settlement_id = 1200000 + Yasno id (yasno_city_id kept) (448856 addresses, 12541 in several subqueues, 2 without one); hromada + katottg for 739 of 963 settlements (codifier 2026-07-07); 27.11.2026: 77 houses of saved addresses moved to DTEK's new groups 1-18 (bare labels, Yasno re-asked 27.11), the rest keep 1.1-6.2 until a stable snapshot exists",
     "addresses_rv_v1.json": "Rivne - keyed by rv::{hromada}::{settlement} (687 settlements): numbered houses, streets listed without numbers (`street_queues`) and villages listed whole (`settlement_queues`, 497)"
   },
   "regions": {
@@ -32,7 +32,7 @@
       "streets": 18104,
       "addresses": 372308,
       "katottg": true,
-      "queues_updated": "2026-11-24 (partial)"
+      "queues_updated": "2026-11-27 (partial)"
     },
     "ternopilska": {
       "file": "addresses_te_v1.json",
@@ -158,7 +158,7 @@
       "addresses": 49550,
       "katottg": true,
       "note": "Yasno public API addresses/v2 (regionId=25, dsoId=902): вулиці → будинки → група, кожен будинок опитано (109 363 запити); 60 груп у вигляді «N.1»; 236 будинків у кількох групах; планових/аварійних ДТЕК не публікує відкрито — застосунок показує примітку «лише графік»",
-      "queues_updated": "2026-11-24 (partial)"
+      "queues_updated": "2026-11-27 (partial)"
     },
     "chernihivska": {
       "file": "addresses_cn_v1.json",
@@ -178,7 +178,8 @@
       "addresses": 448856,
       "katottg": true,
       "katottg_coverage": "739/963",
-      "note": "мережа ДТЕК ДнЕМ (решта області — ЦЕК, addresses_cek_v1.json; 13 із 14 НП ЦЕК є в обох базах, кожен будинок належить одному оператору); Yasno regionId=3, dsoId=301; міста — черга кожного будинку, села — 3 проби на вулицю, при розбіжності — кожен будинок; вводи «N ввод K» зведено в будинок N з чергами всіх вводів; записи одного НП під кількома id Yasno злито за КАТОТТГ (Новомосковськ → Самар)"
+      "note": "мережа ДТЕК ДнЕМ (решта області — ЦЕК, addresses_cek_v1.json; 13 із 14 НП ЦЕК є в обох базах, кожен будинок належить одному оператору); Yasno regionId=3, dsoId=301; міста — черга кожного будинку, села — 3 проби на вулицю, при розбіжності — кожен будинок; вводи «N ввод K» зведено в будинок N з чергами всіх вводів; записи одного НП під кількома id Yasno злито за КАТОТТГ (Новомосковськ → Самар); з 27.11.2026 ДТЕК — 18 груп (голі номери «1»…«18»), групу мають лише перепитані будинки збережених адрес, решта — стара підчерга (сервер: «немає даних»)",
+      "queues_updated": "2026-11-27 (лише будинки збережених адрес, 18 груп)"
     },
     "rivnenska": {
       "file": "addresses_rv_v1.json",
